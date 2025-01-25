@@ -13,14 +13,14 @@ get("/square/new") do
   erb(:square)
 end
 
-get("/square_root/new")
+get("/square_root/new") do
   erb(:sroot)
 end
 
-get("/random/new")
+get("/random/new") do
   erb(:rng)
 end
 
-get("payment/new")
+get("payment/new") do
   erb(:payment)
 end
