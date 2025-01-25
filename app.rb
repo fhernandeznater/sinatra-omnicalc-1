@@ -9,17 +9,17 @@ get("/") do
 end
 
 get("/square/new") do
-
+  erb(:square)
 end
 
 get("/square_root/new")
-
+  erb(:sroot)
 end
 
 get("/random/new")
-
+  erb(:rng)
 end
 
 get("payment/new")
-
+  erb(:payment)
 end
