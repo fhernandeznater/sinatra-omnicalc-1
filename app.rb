@@ -7,3 +7,19 @@ get("/") do
   <p>Define some routes in app.rb</p>
   "
 end
+
+get("/square/new") do
+
+end
+
+get("/square_root/new")
+
+end
+
+get("/random/new")
+
+end
+
+get("payment/new")
+
+end
