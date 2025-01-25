@@ -9,6 +9,7 @@ get("/") do
 end
 
 get("/square/new") do
+  @num_to_square = params.fetch("squaring").to_i
   erb(:square)
 end
 
