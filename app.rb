@@ -18,8 +18,13 @@ get("/") do
 end
 
 get("/square/new") do
-  @num_to_square = params.fetch("squaring").to_i
   erb(:square)
+end
+
+get("/square/results") do
+  @num_to_square = params.fetch("users_number").to_f
+  @square_result = @num_to_square ** 2
+  erb(:square_results)
 end
 
 get("/square_root/new") do
