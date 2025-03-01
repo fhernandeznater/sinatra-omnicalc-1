@@ -65,6 +65,6 @@ get("/payment/results") do
   number_of_payments = @years_number * 12
   calculated_payment_float = (mpr * @principal)/(1-((1+mpr) ** -number_of_payments))
   @calculated_payment = calculated_payment_float.to_fs(:currency)
-  @apr = apr.to_s + "%"
+  @apr = format("%.4f%%", apr)
   erb(:payment_results)
 end
