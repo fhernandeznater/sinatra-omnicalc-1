@@ -58,12 +58,13 @@ end
 
 
 get("/payment/results") do
-  @apr = params.fetch("user_apr").to_f
+  apr = params.fetch("user_apr").to_f
   @years_number = params.fetch("user_years").to_i
   @principal = params.fetch("user_principal").to_f
-  mpr = @apr/12/100
+  mpr = apr/12/100
   number_of_payments = @years_number * 12
   calculated_payment_float = (mpr * @principal)/(1-((1+mpr) ** -number_of_payments))
   @calculated_payment = calculated_payment_float.to_fs(:currency)
+  @apr = apr.to_s + "%"
   erb(:payment_results)
 end
