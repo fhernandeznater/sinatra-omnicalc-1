@@ -52,7 +52,7 @@ get("/random/results") do
   erb(:rng_results)
 end
 
-get("payment/new") do
+get("/payment/new") do
   erb(:payment)
 end
 
@@ -62,6 +62,8 @@ get("/payment/results") do
   @years_number = params.fetch("user_years").to_i
   @principal = params.fetch("user_principal").to_f
   mpr = @apr/12/100
-  @calculated-payment = (mpr * @principal)/1-((1+mpr) ** (0-@years_number)
+  number_of_payments = @years_number * 12
+  calculated_payment_float = (mpr * @principal)/(1-((1+mpr) ** -number_of_payments))
+  @calculated_payment = calculated_payment_float.to_fs(:currency)
   erb(:payment_results)
 end
